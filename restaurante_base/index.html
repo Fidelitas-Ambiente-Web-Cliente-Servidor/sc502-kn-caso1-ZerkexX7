@@ -1,28 +1,248 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Restaurante Ficticio</title>
 
-  <!-- Bootstrap CSS -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
-    rel="stylesheet"
-  />
+<title>Restaurante Sabor Gourmet</title>
 
-  <!-- Estilos propios -->
-  <link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style.css">
+
 </head>
+
+
 <body>
 
-  <script src="js/app.js"></script>
+
+<header>
+
+<h1>🍽 Restaurante Sabor Gourmet</h1>
+
+<p>Menú y Reservaciones</p>
+
+</header>
+
+
+
+<main>
+
+
+
+<section>
+
+<h2>Menú del Restaurante</h2>
+
+
+<div class="botones">
+
+<button onclick="filtrarCategoria('Todos')">
+Todos
+</button>
+
+
+<button onclick="filtrarCategoria('Entrada')">
+Entradas
+</button>
+
+
+<button onclick="filtrarCategoria('Plato Fuerte')">
+Platos Fuertes
+</button>
+
+
+<button onclick="filtrarCategoria('Postre')">
+Postres
+</button>
+
+
+</div>
+
+
+
+<div id="menu-container"></div>
+
+
+</section>
+
+
+
+
+
+<section>
+
+
+<h2>Reservar Mesa</h2>
+
+
+
+<form id="formReserva">
+
+
+<label>
+
+Nombre completo
+
+<input type="text" id="nombre">
+
+<span id="errorNombre" class="error-campo"></span>
+
+</label>
+
+
+
+
+<label>
+
+Correo electrónico
+
+<input type="email" id="correo">
+
+<span id="errorCorreo" class="error-campo"></span>
+
+</label>
+
+
+
+
+<label>
+
+Fecha
+
+<input type="date" id="fecha">
+
+<span id="errorFecha" class="error-campo"></span>
+
+</label>
+
+
+
+
+<label>
+
+Hora
+
+
+<select id="hora">
+
+<option value="">Seleccione</option>
+<option>12:00</option>
+<option>13:00</option>
+<option>18:00</option>
+<option>19:00</option>
+<option>20:00</option>
+
+</select>
+
+
+</label>
+
+
+
+
+<label>
+
+Número de personas
+
+
+<input type="number" id="personas">
+
+
+<span id="errorPersonas" class="error-campo"></span>
+
+
+</label>
+
+
+
+
+
+<label>
+
+Comentarios
+
+
+<textarea id="comentarios"></textarea>
+
+
+</label>
+
+
+
+<button id="btnEnviar" disabled>
+
+Enviar Reserva
+
+</button>
+
+
+
+<p id="mensaje"></p>
+
+
+</form>
+
+
+</section>
+
+
+
+
+
+<section>
+
+
+<h2>Reservas Registradas</h2>
+
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>Nombre</th>
+<th>Correo</th>
+<th>Fecha</th>
+<th>Hora</th>
+<th>Personas</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody id="tablaReservas"></tbody>
+
+
+
+</table>
+
+
+
+
+<div id="resumen" class="resumen-reservas"></div>
+
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+<script src="js/app.js"></script>
+
 
 </body>
+
 </html>
